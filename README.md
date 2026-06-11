@@ -10,7 +10,7 @@ el conocimiento que se pretende estimar o predecir.
 ### Integrantes
 
 - Martin Alonso del Águila Arévalo (Rol) - u202014659
-- Name2 (Rol) - codigo
+- Sergio Andres Saavedra Cervera (Rol) - u202311021
 - Name3 (Rol) - codigo
 
 ### Descripción del Dataset
