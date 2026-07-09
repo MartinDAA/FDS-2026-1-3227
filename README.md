@@ -4,17 +4,36 @@
 
 ## Objetivo del Proyecto
 
-El objetivo del proyecto es analizar el dataset de videos que son tendencia en el país de Alemania donde nos encargaremos de organizar y limpiar los datos que sean necesarios para resolver el caso de negocio que planteamos.
+El presente proyecto tiene como objetivo principal aplicar la metodología **CRISP-DM** para responder a las necesidades de una empresa de marketing digital que busca comprender las dinámicas de viralidad en YouTube para optimizar sus estrategias de contenido y publicidad en el mercado alemán. Los objetivos particulares se dividen en dos:
+
+### Objetivos del negocio
+
+- Identificar las categorías y canales con mayor capacidad de generar tendencia y engagement (likes, comentarios) para orientar la inversión publicitaria.
+- Determinar qué variables (frecuencia del canal, etiquetado, longitud del título, categoría) influyen en el éxito de un video en términos de visualizaciones.
+- Proporcionar insights accionables que permitan priorizar contenidos, optimizar metadatos y seleccionar socios estratégicos (canales) para campañas futuras.
+
 ### Objetivos de Data Science
- - La meta de nuestro análisis es visualizar de manera gráfica la cantidad de visitas que tiene los videos de cada estado de Alemania.
- - Crear un modelo que pueda categorizar el número de visitas que tiene cada estado tomando en cuenta el número de vistas del video y del lugar donde se publicó, categorizar los videos que tiene más "me gustas" y las que tienen más "no me gustas", etc.
+
+Para dar respuesta a los objetivos de negocio, se plantean las siguientes metas de minería de datos:
+
+- **Análisis descriptivo y exploratorio**: Caracterizar el comportamiento de los videos en tendencia mediante visualizaciones y estadísticos que respondan a las preguntas del cliente (categorías más frecuentes, evolución temporal, canales más recurrentes, distribución geográfica, relación entre tendencia y aprobación).
+
+- **Modelado predictivo**: Construir un modelo de Machine Learning (**Regresión Lineal Múltiple**) que estime el número de visualizaciones (`views`) de un video en función de variables disponibles al momento de la publicación. La variable dependiente es `views` (transformada a `log_views` para estabilizar la varianza). Las variables independientes principales seleccionadas son:
+  - `channel_frequency` (frecuencia histórica del canal en tendencia)
+  - `category_id` (categoría del video)
+  - `num_tags` (número de etiquetas)
+  - `title_length` (longitud del título)
+
+  Una explicación más a detalle de estas variables las verás más adelante en este `README` y la justificación de su elección las puedes ver en el [código del modelo](code/model.ipynb)
+
+El modelo permitirá evaluar la factibilidad de la predicción y cuantificar el impacto de cada variable en el rendimiento esperado de un video.
 
 
 ## Integrantes
 
-- Martin Alonso del Águila Arévalo (Data Scientist) - u202014659
-- Sergio Andres Saavedra Cervera (Data Engineer) - u202311021
-- David Angelo Zavala Arteaga (Business Project Sponsor) - u202318335
+- Martin Alonso del Águila Arévalo (Data Scientist)
+- Sergio Andres Saavedra Cervera (Data Engineer)
+- David Angelo Zavala Arteaga (Business Project Sponsor)
 
 
 ## Descripción del Dataset
@@ -111,4 +130,10 @@ Estas son variables que fueron añadidas al dataset original por la coordinació
 * Realizar un análisis de sentimiento sobre los comentarios si se obtiene acceso a la API de YouTube.
 
 * Extender el estudio a otros países para validar si los patrones observados en Alemania se replican en diferentes mercados.
+
+## Licencia
+
+Este proyecto se distribuye bajo la **Licencia MIT**, lo que permite su uso, modificación y distribución siempre que se incluya el aviso de copyright original.
+
+Para más detalles, revisa el archivo [LICENSE](LICENSE) incluido en este repositorio.
 
